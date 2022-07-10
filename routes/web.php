@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/posts', function () {
+    return view('posts');
+});
+
+// Mengirim data ke views dengan array
+Route::get('/about', function () {
+    return view('about', [
+        "nama" => "Virgi Septian",
+        "kelas" => "XII RPL 3",
+        "email" => "virgiseptian77@gmail.com",
+        "img" => "virgiseptian.jpg",
+    ]);
+});
