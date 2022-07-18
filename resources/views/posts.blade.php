@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+{{-- @extend untuk engambil kerangka dari folder layouts/main.blade.php--}}
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WPU BLOG | Post</title>
-</head>
-
-<body>
-    <h1>Halaman Post</h1>
-</body>
-
-</html>
+@section('section')
+    @foreach($posts as $post)
+        <article>
+            {{-- Inputan slug ini yang ada dalam link href untuk mengisi slug yang nanti diambil oleh halamam post --}}
+            <a href="/post/{{ $post['slug'] }}"><h2>{{ $post['tittle'] }}</h2> </a>
+            <h5>By : {{ $post['author'] }}</h5>
+            <p>{{ $post['body'] }}</p>
+        </article>
+    @endforeach
+@endsection
