@@ -2,38 +2,16 @@
 
 namespace App\Models;
 
-class Post
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model
 {
-    private static $blog_posts = [
-        [
-            "title" => "Judul Post Pertama",
-            "slug" => 'judul-post-pertama',
-            "author" => "Virgi Septian",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, deleniti ducimus et aut error libero tenetur.
-                Reiciendis molestias repudiandae consequuntur quae! Illum cumque ipsa rerum!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis nisi odit perferendis consequuntur debitis maiores dolore quasi ex porro dolor?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis nisi odit perferendis consequuntur debitis maiores dolore quasi ex porro dolor?",
-        ],
-        [
-            "title" => "Judul Post Kedua",
-            "slug" => 'judul-post-kedua',
-            "author" => "Rohesa Sidiq Pratama",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis nisi odit perferendis consequuntur debitis maiores dolore quasi ex porro dolor?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis nisi odit perferendis consequuntur debitis maiores dolore quasi ex porro dolor?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis nisi odit perferendis consequuntur debitis maiores dolore quasi ex porro dolor?",
-        ],
-    ];
+    use HasFactory;
 
-    public static function all()
-    {
-        return collect(self::$blog_posts);
-    }
+    // Data mana saja yang boleh diisi
+    // protected $fillable = ['title', 'excerpt', 'body'];
 
-    public static function find($slug)
-    {
-        $posts = static::all();
-
-        return $posts->firstWhere('slug', $slug);
-    }
+    // Data yang tidak boleh diisi sisanya boleh
+    protected $guarded = ['id'];
 }

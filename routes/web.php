@@ -35,4 +35,5 @@ Route::get('/about', function () {
 Route::get('/posts', [PostController::class, 'index']);
 
 // Halaman singel post
-Route::get('/post/{slug}', [PostController::class, 'show']);
+// Mengambil slug
+Route::get('/post/{post:slug}', [PostController::class, 'show']);
