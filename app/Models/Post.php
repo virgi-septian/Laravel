@@ -14,4 +14,10 @@ class Post extends Model
 
     // Data yang tidak boleh diisi sisanya boleh
     protected $guarded = ['id'];
+
+    public function category()
+    {
+        // satu post hanya boleh memilik satu category
+        return $this->belongsTo(Category::class);
+    }
 }
