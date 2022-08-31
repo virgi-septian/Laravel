@@ -5,10 +5,9 @@
 
 {{-- section adalah cild dari yield 'section' --}}
 @section('section')
-
     <article>
         <h2>{{ $post->title }}</h2>
-        <p>By Virgi Septian in <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
+        <p>By Virgi Septian in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
         <h5>{{ $post->author }}</h5>
         <p>{!! $post->body !!}</p>
 
