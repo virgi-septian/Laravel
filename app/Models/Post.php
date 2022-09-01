@@ -20,4 +20,9 @@ class Post extends Model
         // satu post hanya boleh memilik satu category
         return $this->belongsTo(Category::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
