@@ -10,7 +10,8 @@ class CategoryControler extends Controller
     public function show(Category $category)
     {
         return view('category',[
-            'title' => '',
+            'title' => 'Single Post',
+            ''
         ]);
     }
 }
